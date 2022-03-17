@@ -11,7 +11,7 @@ export const reducers: ActionReducerMap<State> = {
 };
 
 /**
- * ログ出力の設定
+ * ログ出力の設定を行う。
  * @param reducer 
  * @returns newState
  */
