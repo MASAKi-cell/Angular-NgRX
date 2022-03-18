@@ -7,3 +7,4 @@ Ngexを使用した状態管理アプリを作成する
 Angular<br>
 NgRX<br>
 
+
