@@ -1,13 +1,16 @@
 import { Action, ActionReducer, ActionReducerMap, createFeatureSelector, createSelector, MetaReducer } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
+import * as fromSession from './session.reducer';
 
 
 export interface State {
 
+  [fromSession.sessionFeatureKey]: fromSession.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
 
+  [fromSession.sessionFeatureKey]: fromSession.reducer,
 };
 
 /**

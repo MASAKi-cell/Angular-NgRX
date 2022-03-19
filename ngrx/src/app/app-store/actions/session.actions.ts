@@ -1,11 +1,11 @@
-import { createAction, props } from '@ngrx/store';
+import { createAction, props, union } from '@ngrx/store';
 
-export const ySessions = createAction(
-  '[Session] Y Sessions'
+export const loadSessions = createAction(
+  '[Session] Load Sessions'
 );
 
-export const ySessionsSuccess = createAction(
-  '[Session] Y Sessions Success',
+export const loadSessionsSuccess = createAction(
+  '[Session] Load Sessions Success',
   props<{ data: any }>()
 );
 
