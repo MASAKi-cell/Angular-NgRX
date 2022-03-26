@@ -23,7 +23,7 @@ export class TodoService {
       let params = new HttpParams();
       params = offset ? params.set('offset', `${offset}`) : params;
       params = limit ? params.set('limit', `${limit}`) : params;
-      return this.http.get<Todo[]>(url { params });
+      return this.http.get<Todo[]>(url ,{ params });
     }
 
     
