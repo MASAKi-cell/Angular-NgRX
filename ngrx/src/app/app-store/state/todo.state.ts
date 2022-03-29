@@ -1,15 +1,17 @@
 import { Todo } from 'src/app/app-store/models/todo';
-import { state } from "./app.state";
 
 export const featureName = 'todo';
 
+
+// State
 export interface State {
   loading: boolean;
   todos: Todo[];
   error?: any;
 }
 
-export const initialState: state = {
+// 初期状態
+export const initialState: State = {
   loading: false,
   todos: [],
 };
