@@ -8,10 +8,7 @@ import * as TodoActions from 'src/app/app-store/actions/index';
 @Injectable()
 export class TodoEffects {
 
-  constructor(
-      private todoService: TodoService, 
-      private actions$: Actions,
-    ) {}
+  constructor(private todoService: TodoService, private actions$: Actions) {}
 
   /**
    * Actionを受け取り副作用を処理する。
@@ -21,7 +18,6 @@ export class TodoEffects {
       ofType(TodoActions.loadAll),
       switchMap(({ offset, limit }) =>
         this.todoService.findAll(offset, limit).pipe(
-
           // 成功の場合はloadSuccess
           map((result) => TodoActions.loadAllSuccess({ todos: result })),
 
@@ -30,5 +26,18 @@ export class TodoEffects {
         )
       )
     )
+  );
+
+  /**
+   * Todoが成功した場合
+   */
+  createSuccess$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(TodoActions.loadAllSuccess),
+      tap(() => {
+        console.log('Success!');
+      })
+    ),
+    { dispatch: false }
   );
 }
