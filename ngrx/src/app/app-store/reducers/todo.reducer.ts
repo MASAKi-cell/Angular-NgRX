@@ -5,4 +5,4 @@ import * as TodoAction from 'src/app/app-store/actions/index';
 
 export const reducer = createReducer(initialState, on(TodoAction.loadAll, state => {
     return {...state, loading: true};
-}))
+})) 
